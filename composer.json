@@ -1,0 +1,56 @@
+{
+    "name": "mojtaba-gheytasi/request-validator-bundle",
+    "description": "Symfony bundle for validating request parameters in a clean structure",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "keywords": [
+        "symfony-validator",
+        "validator-bundle",
+        "request-validator"
+    ],
+    "homepage": "https://github.com/mojtaba-gheytasi/request-validator-bundle",
+    "authors": [
+        {
+            "name": "Mojtaba Gheytasi",
+            "email": "mjgheytasi@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/mojtaba-gheytasi/request-validator-bundle/issues",
+        "source": "https://github.com/mojtaba-gheytasi/request-validator-bundle"
+    },
+    "autoload": {
+        "psr-4": {
+            "MojtabaGheytasi\\RequestValidatorBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MojtabaGheytasi\\RequestValidatorBundle\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "symfony/framework-bundle": "^4.4 || ^5.0",
+        "symfony/validator": "^4.4 || ^5.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpunit/phpunit": "9.5.x-dev",
+        "sensio/framework-extra-bundle": "^5.5",
+        "symfony/browser-kit": "^5.0",
+        "symfony/test-pack": "^1.0",
+        "symfony/maker-bundle": "^1.30",
+        "symfony/yaml": "^4.4 || ^5.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "discard-changes": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --coverage-text"
+    }
+}
