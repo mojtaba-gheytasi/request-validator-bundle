@@ -2,8 +2,6 @@
 Symfony Request Validator Bundle
 </h2>
 
-<h5 align="center">For every Symfony clean coder and SOLID lover</h5>
-
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mojtaba-gheytasi/request-validator-bundle/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/mojtaba-gheytasi/request-validator-bundle/?branch=main)
 [![Build Status](https://scrutinizer-ci.com/g/mojtaba-gheytasi/request-validator-bundle/badges/build.png?b=main)](https://scrutinizer-ci.com/g/mojtaba-gheytasi/request-validator-bundle/build-status/main)
 
