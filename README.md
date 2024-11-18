@@ -25,7 +25,7 @@ composer require mojtaba-gheytasi/request-validator-bundle
 Suppose you want to validate incoming request parameters as follows:
 
 ```php
-//Get api/product/search?brand=gucci&price[min]=100&price[max]=1000
+#Get api/product/search?brand=gucci&price[min]=100&price[max]=1000
 [
     'brand' => 'gucci',
     'price' => [
@@ -98,27 +98,29 @@ class ProductController
             return new JsonResponse($request->getErrors(), Response::HTTP_BAD_REQUEST);
         }
     
-        // The incoming request is valid...
+        # The incoming request is valid...
     
-        // Retrieve one of the validated input data...
+        # Retrieve one of the validated input data...
         $brand = $request->validated('brand'); //gucci
     
-        // Retrieve all of the validated input data...
+        # Retrieve all of the validated input data...
         $validated = $request->validated();
-    //    [
-    //        'brand' => 'gucci',
-    //        'price' => [
-    //            'min' => 100,
-    //            'max' => 1000,
-    //        ]
-    //    ]
+    /*
+      [
+          'brand' => 'gucci',
+          'price' => [
+              'min' => 100,
+              'max' => 1000,
+          ]
+      ]
+    */
     }
 }
 ```
 If validate incoming request parameters as follows, can see error messages:
 
 ```php
-    //Get api/product/search?brand=a&price[min]=dummy&price[max]=-10.5
+    # Get api/product/search?brand=a&price[min]=dummy&price[max]=-10.5
     [
         'brand' => 'a',
         'price' => [
@@ -141,21 +143,23 @@ class ProductController
         $request->hasError(); // true
         
         $request->getErrors(); // returns following array
-//        [
-//            "brand": [
-//                "This value is too short. It should have 2 characters or more."
-//            ],
-//            "price": [
-//                "min": [
-//                    "This value should be of type integer.",
-//                    "This value should be positive."
-//                ],
-//                "max": [
-//                    "This value should be of type integer.",
-//                    "This value should be positive."
-//                ]
-//            ]
-//        ]   
+        /*
+        [
+            "brand": [
+                "This value is too short. It should have 2 characters or more."
+            ],
+            "price": [
+                "min": [
+                    "This value should be of type integer.",
+                    "This value should be positive."
+                ],
+                "max": [
+                    "This value should be of type integer.",
+                    "This value should be positive."
+                ]
+            ]
+        ]
+        */   
     }
 }
 ```
@@ -179,8 +183,10 @@ class FailedValidation implements FailedValidationInterface
 {
     public function onFailedValidation(array $errors)
     {
-        // Recommend throw an custom exception and handle it with symfony listeners (listen on ExceptionEvent)
-        // You can find more details on https://symfony.com/doc/4.4/event_dispatcher.html#creating-an-event-listener
+        /*
+            Recommend throw an custom exception and handle it with symfony listeners (listen on ExceptionEvent)
+            You can find more details on https://symfony.com/doc/4.4/event_dispatcher.html#creating-an-event-listener
+        */
     }
 }
 ```
@@ -205,9 +211,9 @@ class ProductController
 {
     public function search(SearchProductRequest $request): Response
     {
-        // The incoming request is valid...
+        # The incoming request is valid...
     
-        // Retrieve one of the validated input data...
+        # Retrieve one of the validated input data...
         $brand = $request->validated('brand'); //gucci
     }
 }
